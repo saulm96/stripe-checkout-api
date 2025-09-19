@@ -1,0 +1,7 @@
+{
+  "id": "book_001",
+  "name": "Mi Libro Increíble",
+  "amount": 2999,
+  "currency": "eur",
+  "stock": 100
+}

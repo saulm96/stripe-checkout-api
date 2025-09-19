@@ -1,0 +1,36 @@
+{
+  "name": "stripe-checkout-api",
+  "version": "1.0.0",
+  "description": "A backend API for handling Stripe checkout sessions.",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+    "docker:dev": "docker-compose up",
+    "docker:prod": "NODE_ENV=production DOCKER_CMD='npm start' docker-compose up",
+    "docker:build": "docker-compose up --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saulm96/stripe-checkout-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saulm96/stripe-checkout-api/issues"
+  },
+  "homepage": "https://github.com/saulm96/stripe-checkout-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "stripe": "^18.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

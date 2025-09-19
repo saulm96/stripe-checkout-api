@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: .
+    container_name: ${APP_HOST}
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "${APP_PORT}:3001"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - app_network
+    environment:
+      - NODE_ENV=${NODE_ENV:-development}
+    command: ${DOCKER_CMD:-npm run dev}
+
+volumes:
+  node_modules:
+
+networks:
+  app_network:
+    driver: bridge
